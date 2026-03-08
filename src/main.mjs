@@ -9,20 +9,14 @@ import { sleep } from "./utils.mjs";
 /**
  * Remainder of the main function that runs within one modal.
  *
- * TODO abortsignal?
- *
- * @param {Element} dialog - The dialog's main body div.
+ * @param {HTMLDivElement} dialog - The dialog's main body div.
  */
 async function inModal(dialog) {
-    logInfo(__FNAME_LINENO__, "Start");
-
-    // Show message.
+    logInfo(__FNAME_LINENO__, "Showing message");
     const message = document.createElement("p");
     message.textContent = "Hello World";
     dialog.replaceChildren(message);
     await sleep(0); // Sleep forever (or until user closes dialog)
-
-    logInfo(__FNAME_LINENO__, "End"); // TODO dead code
 }
 
 /**
