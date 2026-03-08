@@ -1,8 +1,8 @@
 # ![Logo](icons/favicon.png?raw=true "Logo") Bookmarklet-Template
 
 Bookmarklet-Template is an example git repo that includes unit tests, linting, multiple modules (source files), and a
-compiler that compiles all modules into a single JavaScript IIFE. This is how I structure all my one-off bookmarklets. In
-this README I'll explain my design choices with several aspects of the project.
+compiler that compiles all modules into a single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
+This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet).
 
 <table>
     <tr>
@@ -119,7 +119,7 @@ There are three ways to install the bookmarklet.
 The best way to install this bookmarklet for **Chrome** and **Edge** is to import the bookmarks HTML file. This way the
 bookmarklet will have a favicon. Unfortunately the favicon doesn't show in other browsers.
 
-1. Download the latest `bookmarklet.html` from the [releases section](https://github.com/Robpol86/bookmarklet-template/releases)
+1. Download the latest `bookmarklet.html` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template/releases)
 1. Import in Chrome:
     1. In Chrome go to Bookmarks > Bookmark Manager
     1. Click on the three dots in the upper right corner and click "Import bookmarks"
@@ -139,7 +139,7 @@ bookmarklet will have a favicon. Unfortunately the favicon doesn't show in other
 
 This method doesn't require importing, you just copy and paste the javascript "URL" into a new bookmark manually.
 
-1. Download the latest `bookmarklet.js` from the [releases section](https://github.com/Robpol86/bookmarklet-template/releases)
+1. Download the latest `bookmarklet.js` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template/releases)
 1. Copy the contents of `bookmarklet.js` to your clipboard
 1. In Chrome:
     1. In Chrome go to Bookmarks > Bookmark Manager
