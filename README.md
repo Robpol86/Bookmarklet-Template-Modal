@@ -158,3 +158,7 @@ This method doesn't require importing, you just copy and paste the javascript "U
 
 Go to any website and click on the bookmarklet in the bookmarks bar (or wherever you've placed it). You should get an alert
 that says "Hello World".
+
+## TODO
+
+Based on Lucas Menezes's post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
