@@ -24,6 +24,12 @@ make test  # Runs unit tests.
 make lint  # Runs linters.
 ```
 
+To see all available commands with their descriptions just run:
+
+```bash
+make
+```
+
 ## Releases
 
 These are the steps a maintainer will take to make a new release.

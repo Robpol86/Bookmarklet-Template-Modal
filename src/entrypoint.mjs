@@ -8,10 +8,10 @@ import { main } from "./main.mjs";
 /**
  * Entrypoint function of the bookmarklet.
  */
-function entrypoint() {
+async function entrypoint() {
     logInfo(__FNAME_LINENO__, "Start");
     try {
-        main();
+        await main();
     } finally {
         logInfo(__FNAME_LINENO__, "End");
     }
