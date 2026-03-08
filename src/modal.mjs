@@ -7,7 +7,7 @@
 import css from "./modal.scss";
 import { logDebug } from "./log.mjs";
 
-export const CSS_PREFIX = "bkmrklt-mdl-"; // TODO dedupe
+export const CSS_PREFIX = "bkmrklt-mdl-";
 const MODAL_CLOSED_ERROR = "ModalClosedError";
 
 /**
