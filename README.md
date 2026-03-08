@@ -1,6 +1,6 @@
-# ![Logo](icons/favicon.png?raw=true "Logo") Bookmarklet-Template
+# ![Logo](icons/favicon.png?raw=true "Logo") Bookmarklet-Template-Modal
 
-Bookmarklet-Template is an example git repo that includes unit tests, linting, multiple modules (source files), and a
+Bookmarklet-Template-Modal is an example git repo that includes unit tests, linting, multiple modules (source files), and a
 compiler that compiles all modules into a single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
 This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet).
 
@@ -119,7 +119,7 @@ There are three ways to install the bookmarklet.
 The best way to install this bookmarklet for **Chrome** and **Edge** is to import the bookmarks HTML file. This way the
 bookmarklet will have a favicon. Unfortunately the favicon doesn't show in other browsers.
 
-1. Download the latest `bookmarklet.html` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template/releases)
+1. Download the latest `bookmarklet.html` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases)
 1. Import in Chrome:
     1. In Chrome go to Bookmarks > Bookmark Manager
     1. Click on the three dots in the upper right corner and click "Import bookmarks"
@@ -129,26 +129,26 @@ bookmarklet will have a favicon. Unfortunately the favicon doesn't show in other
     1. In Firefox go to Bookmarks > Manage Bookmarks
     1. In the Library window click on the import/backup button (up and down arrows) then Import Bookmarks from HTML
     1. Select the downloaded `bookmarklet.html`
-    1. Locate **Bookmarklet-Template** in the Bookmarks Menu folder
+    1. Locate **Bookmarklet-Template-Modal** in the Bookmarks Menu folder
 1. Import in Safari:
     1. In Safari go to File > Import Browsing Data from File or Folder > Choose File or Folder
     1. Select the downloaded `bookmarklet.html`
-    1. Locate **Bookmarklet-Template** in your bookmarks
+    1. Locate **Bookmarklet-Template-Modal** in your bookmarks
 
 ### Copy and Paste Method
 
 This method doesn't require importing, you just copy and paste the javascript "URL" into a new bookmark manually.
 
-1. Download the latest `bookmarklet.js` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template/releases)
+1. Download the latest `bookmarklet.js` from the [releases section](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases)
 1. Copy the contents of `bookmarklet.js` to your clipboard
 1. In Chrome:
     1. In Chrome go to Bookmarks > Bookmark Manager
     1. Click on the three dots in the upper right corner and click "Add new bookmark"
-    1. Type **Bookmarklet-Template** for the name and paste the contents of `bookmarklet.js` into the URL field
+    1. Type **Bookmarklet-Template-Modal** for the name and paste the contents of `bookmarklet.js` into the URL field
 1. In Firefox:
     1. In Firefox go to Bookmarks > Manage Bookmarks
     1. In the Library window click on the organize button (gear icon) then click "Add Bookmark"
-    1. Type **Bookmarklet-Template** for the name and paste the contents of `bookmarklet.js` into the URL field
+    1. Type **Bookmarklet-Template-Modal** for the name and paste the contents of `bookmarklet.js` into the URL field
 
 ### Drag and Drop Method
 
