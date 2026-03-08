@@ -129,11 +129,11 @@ bookmarklet will have a favicon. Unfortunately the favicon doesn't show in other
     1. In Firefox go to Bookmarks > Manage Bookmarks
     1. In the Library window click on the import/backup button (up and down arrows) then Import Bookmarks from HTML
     1. Select the downloaded `bookmarklet.html`
-    1. Locate **Bookmarklet-Template** in the Bookmarks Menu folder
+    1. Locate **Bookmarklet-Template-Modal** in the Bookmarks Menu folder
 1. Import in Safari:
     1. In Safari go to File > Import Browsing Data from File or Folder > Choose File or Folder
     1. Select the downloaded `bookmarklet.html`
-    1. Locate **Bookmarklet-Template** in your bookmarks
+    1. Locate **Bookmarklet-Template-Modal** in your bookmarks
 
 ### Copy and Paste Method
 
@@ -144,11 +144,11 @@ This method doesn't require importing, you just copy and paste the javascript "U
 1. In Chrome:
     1. In Chrome go to Bookmarks > Bookmark Manager
     1. Click on the three dots in the upper right corner and click "Add new bookmark"
-    1. Type **Bookmarklet-Template** for the name and paste the contents of `bookmarklet.js` into the URL field
+    1. Type **Bookmarklet-Template-Modal** for the name and paste the contents of `bookmarklet.js` into the URL field
 1. In Firefox:
     1. In Firefox go to Bookmarks > Manage Bookmarks
     1. In the Library window click on the organize button (gear icon) then click "Add Bookmark"
-    1. Type **Bookmarklet-Template** for the name and paste the contents of `bookmarklet.js` into the URL field
+    1. Type **Bookmarklet-Template-Modal** for the name and paste the contents of `bookmarklet.js` into the URL field
 
 ### Drag and Drop Method
 
