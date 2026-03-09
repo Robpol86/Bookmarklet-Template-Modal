@@ -64,7 +64,7 @@ describe("modal.mjs", () => {
         test("renders a <dialog> element in the DOM while open", async () => {
             let dialogWhileOpen;
 
-            await modal((body, signal) => {
+            await modal(() => {
                 dialogWhileOpen = getDialog();
             });
 
@@ -75,7 +75,7 @@ describe("modal.mjs", () => {
         test("calls showModal() to open the dialog", async () => {
             let showModalSpy;
 
-            await modal((body) => {
+            await modal(() => {
                 showModalSpy = getDialog().showModal;
             });
 
@@ -115,7 +115,7 @@ describe("modal.mjs", () => {
         test("renders a dialog-body div inside the dialog", async () => {
             let bodyDiv;
 
-            await modal((body) => {
+            await modal(() => {
                 bodyDiv = getDialogBody();
             });
 
