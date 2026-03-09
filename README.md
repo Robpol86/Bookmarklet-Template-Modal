@@ -166,3 +166,4 @@ that says "Hello World".
 - Revisit dir structure section
 - Revisit entire README
 - New screenshots
+- codecov and README badges like my Python repos
