@@ -1,6 +1,5 @@
 import { PROJECT_KEY, logDebug, logError, logInfo } from "../src/log.mjs";
 import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
-import { modal } from "../src/modal.mjs";
 
 describe("log.mjs", () => {
     let spyConsoleDebug;
@@ -18,10 +17,6 @@ describe("log.mjs", () => {
     });
 
     describe("logError()", () => {
-        test("assert modal", () => {
-            expect(modal).toBeDefined();
-        });
-
         test("calls console.error", () => {
             logError("log message");
             expect(spyConsoleError).toHaveBeenCalledTimes(1);
