@@ -69,6 +69,7 @@ function teeBookmarkletHtml({ icon, label, input, output } = {}) {
                 fileName: output,
                 source: html,
             });
+            this.info(`generated ${output}`);
         },
     };
 }
