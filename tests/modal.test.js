@@ -42,6 +42,7 @@ describe("modal.mjs", () => {
             let dialog;
 
             const result = await modal((dialogBodyDiv) => {
+                expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
                 dialog = dialogBodyDiv.closest("dialog");
                 expect(dialog.open).toBe(true);
                 expect(document.body.children).toHaveLength(1);
