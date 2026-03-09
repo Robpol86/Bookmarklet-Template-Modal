@@ -13,6 +13,8 @@ describe("modal.mjs", () => {
             }
             return element;
         });
+        // Patch requestAnimationFrame to resolve immediately, since jsdom doesn't implement it.
+        jest.spyOn(global, "requestAnimationFrame").mockImplementation((callback) => callback(0));
     });
 
     afterEach(() => {
@@ -37,17 +39,20 @@ describe("modal.mjs", () => {
 
     describe("modal()", () => {
         test("close immediately", async () => {
-            let called = false;
+            let dialog;
 
-            const result = await modal(() => {
-                called = true;
-                // TODO assert dialog is in the DOM.
+            const result = await modal((dialogBodyDiv) => {
+                dialog = dialogBodyDiv.closest("dialog");
+                expect(dialog.open).toBe(true);
+                expect(document.body.children).toHaveLength(1);
+                expect(document.head.children).toHaveLength(1);
                 return; // No sleep means the dialog should close immediately after opening.
             });
 
             expect(result).toBeUndefined();
-            expect(called).toBe(true);
-            // TODO assert DOM is back to normal.
+            expect(dialog.open).toBe(false);
+            expect(document.body.children).toHaveLength(0);
+            expect(document.head.children).toHaveLength(0);
         });
 
         test.todo("closed by user");
