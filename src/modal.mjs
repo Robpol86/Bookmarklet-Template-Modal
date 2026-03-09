@@ -54,7 +54,7 @@ async function displayModal(fn, ...args) {
     const dialogBodyDiv = document.createElement("div");
     dialogBodyDiv.id = `${CSS_PREFIX}dialog-body`;
     dialog.appendChild(dialogBodyDiv);
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await new Promise((resolve) => requestAnimationFrame(resolve)); // Notify browser DOM is about to change
     dialog.showModal();
     const wrappedPromise = Promise.resolve(fn(dialogBodyDiv, abortSignal, ...args)).catch((error) => {
         if (abortSignal.aborted) {
