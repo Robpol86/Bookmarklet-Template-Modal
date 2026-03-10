@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
 import { modal } from "../src/modal.mjs";
+import { sleep } from "../src/utils.mjs";
 
 describe("modal.mjs", () => {
     beforeEach(() => {
@@ -41,9 +42,24 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test.todo("closed by wrapped function");
+    test("closed by close button", async () => {
+        const closeButton = new Promise();
+        const callback = async (dialogBodyDiv) => {
+            // TODO new Promise
+            const button = dialogBodyDiv.closest("button"); // TODO
+            closeButton.resolve(button); // TODO
+            await sleep(0); // Sleep forever (or until close button is pressed)
+        };
+        const result = modal(callback);
 
-    test.todo("closed by close button");
+        await closeButton; // Wait for close button to be set by callback.
+        expect(result).toBeUndefined(); // TODO not yet resolved.
+
+        closeButton.click();
+        await result;
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+    });
 
     test.todo("closed by esc");
 
