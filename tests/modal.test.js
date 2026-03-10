@@ -66,7 +66,7 @@ describe("modal.mjs", () => {
         expect(dialog.open).toBe(false);
     });
 
-    test.todo("closed by esc");
+    test.todo("closed by esc"); // TODO does not work on github projects roadmap view
 
     test.todo("propagate abort via signal");
 
