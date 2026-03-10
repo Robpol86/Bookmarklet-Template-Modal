@@ -1,5 +1,5 @@
+import { CSS_PREFIX, modal } from "../src/modal.mjs";
 import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
-import { modal } from "../src/modal.mjs";
 import { sleep } from "../src/utils.mjs";
 
 describe("modal.mjs", () => {
@@ -43,20 +43,21 @@ describe("modal.mjs", () => {
     });
 
     test("closed by close button", async () => {
-        const closeButton = new Promise();
+        let closeButtonSetResolveFn;
+        const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
         const callback = async (dialogBodyDiv) => {
-            // TODO new Promise
-            const button = dialogBodyDiv.closest("button"); // TODO
-            closeButton.resolve(button); // TODO
+            const dialog = dialogBodyDiv.closest("dialog");
+            const closeButton = document.getElementById(`#${CSS_PREFIX}closeButtonX`);
+            closeButtonSetResolveFn([dialog, closeButton]);
             await sleep(0); // Sleep forever (or until close button is pressed)
         };
-        const result = modal(callback);
+        const modalPromise = modal(callback); // Modal will open and callback will eventually be called
 
-        await closeButton; // Wait for close button to be set by callback.
-        expect(result).toBeUndefined(); // TODO not yet resolved.
+        const [dialog, closeButton] = await closeButtonSetPromise; // Wait for callback to reach the sleep function
+        expect(dialog.open).toBe(true);
 
         closeButton.click();
-        await result;
+        const result = await modalPromise;
         expect(result).toBeUndefined();
         expect(dialog.open).toBe(false);
     });
