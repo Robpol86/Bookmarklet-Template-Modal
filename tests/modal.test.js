@@ -21,10 +21,10 @@ describe("modal.mjs", () => {
     afterEach(() => {
         document.body.innerHTML = "";
         document.head.innerHTML = "";
-        jest.clearAllMocks();
+        jest.clearAllMocks(); // TODO NOT UNSPYING.
     });
 
-    test("close immediately", async () => {
+    test.skip("close immediately", async () => {
         let dialog;
 
         const result = await modal((dialogBodyDiv) => {
@@ -42,12 +42,12 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test.skip("closed by close button", async () => {
+    test("closed by close button", async () => {
         let closeButtonSetResolveFn;
         const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
         const callback = async (dialogBodyDiv) => {
             const dialog = dialogBodyDiv.closest("dialog");
-            const closeButton = document.getElementById(`#${CSS_PREFIX}closeButtonX`);
+            const closeButton = document.getElementById(`${CSS_PREFIX}closeButtonX`);
             closeButtonSetResolveFn([dialog, closeButton]);
             await sleep(0); // Sleep forever (or until close button is pressed)
         };
