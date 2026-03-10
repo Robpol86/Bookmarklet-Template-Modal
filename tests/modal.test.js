@@ -1,9 +1,9 @@
 import { CSS_PREFIX, modal } from "../src/modal.mjs";
-import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
+import { afterAll, afterEach, beforeAll, describe, expect, jest, test } from "@jest/globals";
 import { sleep } from "../src/utils.mjs";
 
 describe("modal.mjs", () => {
-    beforeEach(() => {
+    beforeAll(() => {
         // Patch createElement to add showModal() and close() methods to dialogs, since jsdom doesn't implement them.
         const originalCreateElement = document.createElement.bind(document);
         jest.spyOn(document, "createElement").mockImplementation((tag, ...args) => {
@@ -21,10 +21,13 @@ describe("modal.mjs", () => {
     afterEach(() => {
         document.body.innerHTML = "";
         document.head.innerHTML = "";
-        jest.clearAllMocks(); // TODO NOT UNSPYING.
     });
 
-    test.skip("close immediately", async () => {
+    afterAll(() => {
+        jest.clearAllMocks();
+    });
+
+    test("close immediately", async () => {
         let dialog;
 
         const result = await modal((dialogBodyDiv) => {
