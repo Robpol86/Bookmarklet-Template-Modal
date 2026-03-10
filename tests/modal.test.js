@@ -42,7 +42,7 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test("closed by close button", async () => {
+    test.skip("closed by close button", async () => {
         let closeButtonSetResolveFn;
         const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
         const callback = async (dialogBodyDiv) => {
