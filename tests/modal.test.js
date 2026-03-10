@@ -31,9 +31,9 @@ describe("modal.mjs", () => {
         let dialog;
 
         const result = await modal((dialogBodyDiv) => {
-            expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
             dialog = dialogBodyDiv.closest("dialog");
             expect(dialog.open).toBe(true);
+            expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
             expect(document.body.children).toHaveLength(1);
             expect(document.head.children).toHaveLength(1);
             return; // No sleep means the dialog should close immediately after opening.
@@ -41,6 +41,7 @@ describe("modal.mjs", () => {
 
         expect(result).toBeUndefined();
         expect(dialog.open).toBe(false);
+        expect(requestAnimationFrame).toHaveBeenCalledTimes(2);
         expect(document.body.children).toHaveLength(0);
         expect(document.head.children).toHaveLength(0);
     });
