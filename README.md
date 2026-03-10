@@ -108,9 +108,18 @@ Some features I've included in this project are:
 For more information on developing a bookmarklet using this repo as a template read the [CONTRIBUTING.md](CONTRIBUTING.md)
 document.
 
-## Install
+## Installing the Bookmarklet
 
 There are three ways to install the bookmarklet.
+
+1. Import the [bookmarklets.html](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/bookmarklets.html)
+   file (in Chrome and Edge the bookmarklet will have its own favicon)
+2. Copying and pasting the...
+
+There are several ways to install the bookmarklet depending on the web browser. You can find the bookmarklet JS and HTML
+files in the [releases section](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases).
+
+### Chrome
 
 ### Import Bookmarks HTML Method
 
