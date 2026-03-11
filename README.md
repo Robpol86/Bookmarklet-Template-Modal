@@ -162,7 +162,6 @@ that says "Hello World".
 ## TODO
 
 - Mention based on Lucas Menezes's post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
-- Unit tests for modal.mjs and utils.mjs
 - Revisit dir structure section
 - Revisit entire README
 - New screenshots
