@@ -168,3 +168,4 @@ that says "Hello World".
 - New screenshots
 - codecov and README badges like my Python repos
     - Make GitHub Action step conditional on token variable being set, skip if not, don't fail
+- GitHub pages action
