@@ -67,6 +67,7 @@ async function displayModal(fn, ...args) {
         return await Promise.race([wrappedPromise, abortPromise]);
     } finally {
         // Clean up.
+        await new Promise((resolve) => requestAnimationFrame(resolve));
         dialog.close();
         dialog.remove();
         style.remove();
