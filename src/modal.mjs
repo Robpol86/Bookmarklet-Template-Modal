@@ -48,6 +48,7 @@ async function displayModal(fn, ...args) {
         };
         closeButton.addEventListener("click", abortFn);
         dialog.addEventListener("cancel", abortFn);
+        dialog.addEventListener("keydown", abortFn); // TODO only esc
     });
 
     // Show the modal and run wrapped function.
