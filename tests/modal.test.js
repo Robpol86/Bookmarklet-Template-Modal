@@ -23,43 +23,37 @@ describe("modal.mjs", () => {
         jest.clearAllMocks();
     });
 
-    describe("displayModal()", () => {
-        test.todo("closed by close button");
+    test.todo("closed by close button");
 
-        test.todo("closed by esc");
+    test.todo("closed by esc");
 
-        test.todo("closed by wrapped function");
+    test.todo("closed by wrapped function");
 
-        test.todo("propagate abort via signal");
+    test.todo("propagate abort via signal");
 
-        test.todo("bubble up exceptions");
+    test.todo("bubble up exceptions");
 
-        test.todo("style removed from head");
-    });
+    test.todo("style removed from head");
 
-    describe("modal()", () => {
-        test("close immediately", async () => {
-            let dialog;
+    test("close immediately", async () => {
+        let dialog;
 
-            const result = await modal((dialogBodyDiv) => {
-                expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
-                dialog = dialogBodyDiv.closest("dialog");
-                expect(dialog.open).toBe(true);
-                expect(document.body.children).toHaveLength(1);
-                expect(document.head.children).toHaveLength(1);
-                return; // No sleep means the dialog should close immediately after opening.
-            });
-
-            expect(result).toBeUndefined();
-            expect(dialog.open).toBe(false);
-            expect(document.body.children).toHaveLength(0);
-            expect(document.head.children).toHaveLength(0);
+        const result = await modal((dialogBodyDiv) => {
+            expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+            dialog = dialogBodyDiv.closest("dialog");
+            expect(dialog.open).toBe(true);
+            expect(document.body.children).toHaveLength(1);
+            expect(document.head.children).toHaveLength(1);
+            return; // No sleep means the dialog should close immediately after opening.
         });
 
-        test.todo("closed by user");
-
-        test.todo("closed by wrapped function");
-
-        test.todo("pass arguments to wrapped function");
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+        expect(document.body.children).toHaveLength(0);
+        expect(document.head.children).toHaveLength(0);
     });
+
+    test.todo("closed by user");
+
+    test.todo("pass arguments to wrapped function");
 });
