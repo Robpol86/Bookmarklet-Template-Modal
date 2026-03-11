@@ -27,7 +27,7 @@ describe("modal.mjs", () => {
         jest.clearAllMocks();
     });
 
-    test("close immediately", async () => {
+    test("ensure cleanup", async () => {
         let dialog;
 
         const result = await modal((dialogBodyDiv) => {
@@ -46,7 +46,7 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test("closed by close button", async () => {
+    test("close dialog by close button", async () => {
         let closeButtonSetResolveFn;
         const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
         const callback = async (dialogBodyDiv) => {
@@ -66,7 +66,7 @@ describe("modal.mjs", () => {
         expect(dialog.open).toBe(false);
     });
 
-    test.todo("closed by esc"); // TODO does not work on github projects roadmap view
+    test.todo("close dialog by esc"); // TODO does not work on github projects roadmap view
 
     test.todo("propagate abort via signal");
 
