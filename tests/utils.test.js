@@ -20,12 +20,11 @@ describe("utils.mjs", () => {
             jest.advanceTimersByTime(59900);
             await Promise.resolve(); // Flush microtask queue.
             expect(resolved).toBe(false);
-            // expect(sleepPromise).resolves.toBeDefined(); // TODO?
 
             jest.advanceTimersByTime(100);
             await Promise.resolve();
             expect(resolved).toBe(true);
-            expect(sleepPromise).resolves.toBeUndefined();
+            await sleepPromise;
         });
 
         test.todo("sleep forever");
