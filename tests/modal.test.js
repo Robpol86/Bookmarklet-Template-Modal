@@ -1,8 +1,9 @@
-import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
-import { modal } from "../src/modal.mjs";
+import { CSS_PREFIX, modal } from "../src/modal.mjs";
+import { afterAll, afterEach, beforeAll, describe, expect, jest, test } from "@jest/globals";
+import { sleep } from "../src/utils.mjs";
 
 describe("modal.mjs", () => {
-    beforeEach(() => {
+    beforeAll(() => {
         // Patch createElement to add showModal() and close() methods to dialogs, since jsdom doesn't implement them.
         const originalCreateElement = document.createElement.bind(document);
         jest.spyOn(document, "createElement").mockImplementation((tag, ...args) => {
@@ -20,6 +21,9 @@ describe("modal.mjs", () => {
     afterEach(() => {
         document.body.innerHTML = "";
         document.head.innerHTML = "";
+    });
+
+    afterAll(() => {
         jest.clearAllMocks();
     });
 
@@ -42,7 +46,25 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test.todo("close dialog by close button");
+    test("close dialog by close button", async () => {
+        let closeButtonSetResolveFn;
+        const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
+        const callback = async (dialogBodyDiv) => {
+            const dialog = dialogBodyDiv.closest("dialog");
+            const closeButton = document.getElementById(`${CSS_PREFIX}closeButtonX`);
+            closeButtonSetResolveFn([dialog, closeButton]);
+            await sleep(0); // Sleep forever (or until close button is pressed)
+        };
+        const modalPromise = modal(callback); // Modal will open and callback will eventually be called
+
+        const [dialog, closeButton] = await closeButtonSetPromise; // Wait for callback to reach the sleep function
+        expect(dialog.open).toBe(true);
+
+        closeButton.click();
+        const result = await modalPromise;
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+    });
 
     test.todo("close dialog by esc"); // TODO does not work on github projects roadmap view
 
