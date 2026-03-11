@@ -27,6 +27,14 @@ describe("utils.mjs", () => {
             await sleepPromise;
         });
 
-        test.todo("sleep forever");
+        test("sleep forever", async () => {
+            let resolved = false;
+            const sleepPromise = sleep(0);
+            sleepPromise.then(() => (resolved = true));
+
+            jest.advanceTimersByTime(Number.MAX_SAFE_INTEGER);
+            await Promise.resolve(); // Flush microtask queue.
+            expect(resolved).toBe(false);
+        });
     });
 });
