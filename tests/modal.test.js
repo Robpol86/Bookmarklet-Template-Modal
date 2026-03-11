@@ -23,19 +23,7 @@ describe("modal.mjs", () => {
         jest.clearAllMocks();
     });
 
-    test.todo("closed by close button");
-
-    test.todo("closed by esc");
-
-    test.todo("closed by wrapped function");
-
-    test.todo("propagate abort via signal");
-
-    test.todo("bubble up exceptions");
-
-    test.todo("style removed from head");
-
-    test("close immediately", async () => {
+    test("ensure cleanup", async () => {
         let dialog;
 
         const result = await modal((dialogBodyDiv) => {
@@ -54,7 +42,13 @@ describe("modal.mjs", () => {
         expect(document.head.children).toHaveLength(0);
     });
 
-    test.todo("closed by user");
+    test.todo("close dialog by close button");
+
+    test.todo("close dialog by esc"); // TODO does not work on github projects roadmap view
+
+    test.todo("propagate abort via signal");
+
+    test.todo("bubble up exceptions");
 
     test.todo("pass arguments to wrapped function");
 });
