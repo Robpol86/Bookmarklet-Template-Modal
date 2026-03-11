@@ -50,7 +50,6 @@ async function displayModal(fn, ...args) {
         dialog.addEventListener("cancel", abortFn);
         dialog.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
-                event.preventDefault();
                 event.stopImmediatePropagation();
                 abortFn(event);
             }
