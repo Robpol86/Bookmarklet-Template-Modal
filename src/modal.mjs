@@ -48,7 +48,13 @@ async function displayModal(fn, ...args) {
         };
         closeButton.addEventListener("click", abortFn);
         dialog.addEventListener("cancel", abortFn);
-        dialog.addEventListener("keydown", abortFn); // TODO only esc
+        dialog.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                abortFn(event);
+            }
+        });
     });
 
     // Show the modal and run wrapped function.
