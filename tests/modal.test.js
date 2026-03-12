@@ -66,7 +66,25 @@ describe("modal.mjs", () => {
         expect(dialog.open).toBe(false);
     });
 
-    test.todo("close dialog by esc"); // TODO does not work on github projects roadmap view
+    test("close dialog by esc", async () => {
+        let closeButtonSetResolveFn;
+        const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
+        const callback = async (dialogBodyDiv) => {
+            const dialog = dialogBodyDiv.closest("dialog");
+            closeButtonSetResolveFn(dialog);
+            await sleep(0);
+        };
+        const modalPromise = modal(callback);
+
+        /** @type {HTMLDivElement} */
+        const dialog = await closeButtonSetPromise;
+        expect(dialog.open).toBe(true);
+
+        dialog.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+        const result = await modalPromise;
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+    });
 
     test.todo("propagate abort via signal");
 
