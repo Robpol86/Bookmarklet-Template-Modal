@@ -1,8 +1,9 @@
-import { afterEach, beforeEach, describe, expect, jest, test } from "@jest/globals";
-import { modal } from "../src/modal.mjs";
+import { CSS_PREFIX, modal } from "../src/modal.mjs";
+import { afterAll, afterEach, beforeAll, describe, expect, jest, test } from "@jest/globals";
+import { sleep } from "../src/utils.mjs";
 
 describe("modal.mjs", () => {
-    beforeEach(() => {
+    beforeAll(() => {
         // Patch createElement to add showModal() and close() methods to dialogs, since jsdom doesn't implement them.
         const originalCreateElement = document.createElement.bind(document);
         jest.spyOn(document, "createElement").mockImplementation((tag, ...args) => {
@@ -20,46 +21,74 @@ describe("modal.mjs", () => {
     afterEach(() => {
         document.body.innerHTML = "";
         document.head.innerHTML = "";
+    });
+
+    afterAll(() => {
         jest.clearAllMocks();
     });
 
-    describe("displayModal()", () => {
-        test.todo("closed by close button");
+    test("ensure cleanup", async () => {
+        let dialog;
 
-        test.todo("closed by esc");
-
-        test.todo("closed by wrapped function");
-
-        test.todo("propagate abort via signal");
-
-        test.todo("bubble up exceptions");
-
-        test.todo("style removed from head");
-    });
-
-    describe("modal()", () => {
-        test("close immediately", async () => {
-            let dialog;
-
-            const result = await modal((dialogBodyDiv) => {
-                expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
-                dialog = dialogBodyDiv.closest("dialog");
-                expect(dialog.open).toBe(true);
-                expect(document.body.children).toHaveLength(1);
-                expect(document.head.children).toHaveLength(1);
-                return; // No sleep means the dialog should close immediately after opening.
-            });
-
-            expect(result).toBeUndefined();
-            expect(dialog.open).toBe(false);
-            expect(document.body.children).toHaveLength(0);
-            expect(document.head.children).toHaveLength(0);
+        const result = await modal((dialogBodyDiv) => {
+            dialog = dialogBodyDiv.closest("dialog");
+            expect(dialog.open).toBe(true);
+            expect(requestAnimationFrame).toHaveBeenCalledTimes(1);
+            expect(document.body.children).toHaveLength(1);
+            expect(document.head.children).toHaveLength(1);
+            return; // No sleep means the dialog should close immediately after opening.
         });
 
-        test.todo("closed by user");
-
-        test.todo("closed by wrapped function");
-
-        test.todo("pass arguments to wrapped function");
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+        expect(requestAnimationFrame).toHaveBeenCalledTimes(2);
+        expect(document.body.children).toHaveLength(0);
+        expect(document.head.children).toHaveLength(0);
     });
+
+    test("close dialog by close button", async () => {
+        let closeButtonSetResolveFn;
+        const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
+        const callback = async (dialogBodyDiv) => {
+            const dialog = dialogBodyDiv.closest("dialog");
+            const closeButton = document.getElementById(`${CSS_PREFIX}closeButtonX`);
+            closeButtonSetResolveFn([dialog, closeButton]);
+            await sleep(0); // Sleep forever (or until close button is pressed)
+        };
+        const modalPromise = modal(callback); // Modal will open and callback will eventually be called
+
+        const [dialog, closeButton] = await closeButtonSetPromise; // Wait for callback to reach the sleep function
+        expect(dialog.open).toBe(true);
+
+        closeButton.click();
+        const result = await modalPromise;
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+    });
+
+    test("close dialog by esc", async () => {
+        let closeButtonSetResolveFn;
+        const closeButtonSetPromise = new Promise((resolve) => (closeButtonSetResolveFn = resolve));
+        const callback = async (dialogBodyDiv) => {
+            const dialog = dialogBodyDiv.closest("dialog");
+            closeButtonSetResolveFn(dialog);
+            await sleep(0);
+        };
+        const modalPromise = modal(callback);
+
+        /** @type {HTMLDivElement} */
+        const dialog = await closeButtonSetPromise;
+        expect(dialog.open).toBe(true);
+
+        dialog.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+        const result = await modalPromise;
+        expect(result).toBeUndefined();
+        expect(dialog.open).toBe(false);
+    });
+
+    test.todo("propagate abort via signal");
+
+    test.todo("bubble up exceptions");
+
+    test.todo("pass arguments to wrapped function");
 });

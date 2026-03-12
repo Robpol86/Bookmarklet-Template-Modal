@@ -48,6 +48,12 @@ async function displayModal(fn, ...args) {
         };
         closeButton.addEventListener("click", abortFn);
         dialog.addEventListener("cancel", abortFn);
+        dialog.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                event.stopImmediatePropagation();
+                abortFn(event);
+            }
+        });
     });
 
     // Show the modal and run wrapped function.
@@ -67,6 +73,7 @@ async function displayModal(fn, ...args) {
         return await Promise.race([wrappedPromise, abortPromise]);
     } finally {
         // Clean up.
+        await new Promise((resolve) => requestAnimationFrame(resolve));
         dialog.close();
         dialog.remove();
         style.remove();
