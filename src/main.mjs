@@ -24,7 +24,7 @@ async function inModal(dialog) {
  */
 export async function main() {
     // Enforce single instance.
-    if (window.__BOOKMARKLET_MODAL_RUNNING__) return logError(__FNAME_LINENO__, "Another instance already running.");
+    if (window.__BOOKMARKLET_MODAL_RUNNING__) return logError(__FNAME_LINENO__, "Another instance already running");
     window.__BOOKMARKLET_MODAL_RUNNING__ = true;
 
     try {

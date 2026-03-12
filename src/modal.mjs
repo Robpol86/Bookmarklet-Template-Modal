@@ -42,7 +42,7 @@ async function displayModal(fn, ...args) {
         const abortFn = (event) => {
             if (abortSignal.aborted) return;
             event?.preventDefault();
-            logDebug(__FNAME_LINENO__, "Modal closed by user, sending abort signal.");
+            logDebug(__FNAME_LINENO__, "Modal closed by user, sending abort signal");
             abortController.abort();
             reject(new DOMException("Modal closed by user", MODAL_CLOSED_ERROR));
         };
@@ -61,6 +61,7 @@ async function displayModal(fn, ...args) {
     dialogBodyDiv.id = `${CSS_PREFIX}dialog-body`;
     dialog.appendChild(dialogBodyDiv);
     await new Promise((resolve) => requestAnimationFrame(resolve)); // Notify browser DOM is about to change
+    logDebug(__FNAME_LINENO__, "Showing the modal");
     dialog.showModal();
     const wrappedPromise = Promise.resolve(fn(dialogBodyDiv, abortSignal, ...args)).catch((error) => {
         if (abortSignal.aborted) {
@@ -74,6 +75,7 @@ async function displayModal(fn, ...args) {
     } finally {
         // Clean up.
         await new Promise((resolve) => requestAnimationFrame(resolve));
+        logDebug(__FNAME_LINENO__, "Removing the modal");
         dialog.close();
         dialog.remove();
         style.remove();
