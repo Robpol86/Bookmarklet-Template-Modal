@@ -38,7 +38,7 @@ To make a new release:
 
 1. https://github.com/Robpol86/Bookmarklet-Template-Modal/releases
 1. Draft a new release
-1. Tag > Create new tag > `vX.X.X`
+1. Tag > Create new tag > `vX.X`
 1. Set the release title
 1. Generate release notes
 1. Publish release
