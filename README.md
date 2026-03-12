@@ -113,14 +113,14 @@ document.
 There are three ways to install the bookmarklet:
 
 1. Import the
-   [dist/bookmarklets.html](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.html)
+   [dist/bookmarklet.html](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.html)
    file using the browser's bookmarks manager (in Chrome and Edge the bookmarklet will have its own favicon)
 2. Manually crearte a new bookmark with the contents of
-   [dist/bookmarklets.js](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.js) as
+   [dist/bookmarklet.js](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.js) as
    the URL
 3. On a webpage make the bookmarklet an `<a href="...">Bookmarklet</a>` link so the user can drag and drop it into their bookmarks
    bar (replace `...` with the contents of
-   [dist/bookmarklets.js](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.js))
+   [dist/bookmarklet.js](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.js))
    1. This doesn't work from a GitHub README file
 
 ![Screenshot](install-html.png?raw=true "Screenshot")
