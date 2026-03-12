@@ -56,11 +56,15 @@ $body: "div##{$prefix}dialog-body";
     #{$closeButtonX} {
         background: none;
         border: none;
+        color: #000;         // Add this — Safari may not inherit color through dialog stacking
         font-size: 2rem;
+        line-height: 1;      // Add this — Safari button line-height quirk can hide text
         margin: 0;
+        padding: 0.5rem;     // Add this — increases hit area and prevents clipping
         position: absolute;
         right: 0;
         top: 0;
+        z-index: 1;          // Add this — Safari needs explicit z-index for abs-positioned children
     }
 }
 
