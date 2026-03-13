@@ -14,7 +14,7 @@ import { sleep } from "./utils.mjs";
 async function inModal(dialog) {
     logInfo(__FNAME_LINENO__, "Showing message");
     const message = document.createElement("p");
-    message.textContent = "Hello World";
+    message.textContent = "Hello World3";
     dialog.replaceChildren(message);
     await sleep(0); // Sleep forever (or until user closes dialog)
 }
