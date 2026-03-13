@@ -23,7 +23,6 @@ $body: "div##{$prefix}dialog-body";
     // Sizing
     min-width: min(600px, 100vw - 2rem);
     max-width: 900px;
-    max-height: 80vh;
     // Positioning
     top: 10%;
     left: 50%;
@@ -39,9 +38,6 @@ $body: "div##{$prefix}dialog-body";
     margin: 0;
     padding: 0;
     padding-top: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
 
     // Default style for all buttons in the dialog
     button {
@@ -70,8 +66,7 @@ $body: "div##{$prefix}dialog-body";
     font-size: 16px;
     text-align: left;
     padding: 0 2.5rem 2rem;
-    flex: 1;
-    min-height: 0;
+    max-height: calc(80vh - 3.5rem);
     overflow: auto;
 
     h1 {
