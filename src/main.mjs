@@ -13,6 +13,8 @@ import { sleep } from "./utils.mjs";
  */
 async function inModal(dialog) {
     logInfo(__FNAME_LINENO__, "Showing message");
+    // TODO first show just Hello World. Show button same line (right justified) when clicked replaces Hello World with the
+    // 100 lines below.
     dialog.replaceChildren(
         ...Array.from({ length: 100 }, (_, i) => {
             const p = document.createElement("p");
