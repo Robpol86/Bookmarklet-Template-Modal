@@ -56,14 +56,14 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
     <tr>
         <td>
             <div align="center">
-                <img src="used-in-chrome-android.png" alt="Used in Chrome on Android" />
+                <img src="used-in-chrome-android.gif" alt="Used in Chrome on Android" />
                 <br>
                 <em>Used in Chrome on Android</em>
             </div>
         </td>
         <td>
             <div align="center">
-                <img src="used-in-firefox-android.png" alt="Used in Firefox on Android" />
+                <img src="used-in-firefox-android.gif" alt="Used in Firefox on Android" />
                 <br>
                 <em>Used in Firefox on Android</em>
             </div>
