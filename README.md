@@ -9,12 +9,14 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
         <td width="50%">
             <div align="center">
                 <img src="used-in-chrome-macos.png" alt="Used in Chrome on macOS" />
+                <br>
                 <em>Used in Chrome on macOS</em>
             </div>
         </td>
         <td width="50%">
             <div align="center">
                 <img src="used-in-firefox-macos.png" alt="Used in Firefox on macOS" />
+                <br>
                 <em>Used in Firefox on macOS</em>
             </div>
         </td>
@@ -23,12 +25,14 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
         <td>
             <div align="center">
                 <img src="used-in-safari-macos.png" alt="Used in Safari on macOS" />
+                <br>
                 <em>Used in Safari on macOS</em>
             </div>
         </td>
         <td>
             <div align="center">
                 <img src="used-in-edge-win11.png" alt="Used in Edge on Windows 11" />
+                <br>
                 <em>Used in Edge on Windows 11</em>
             </div>
         </td>
@@ -36,13 +40,15 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
     <tr>
         <td>
             <div align="center">
-                <img src="used-in-chrome-iphone.png" alt="Used in Chrome on iPhone" />
+                <img src="used-in-chrome-iphone.gif" alt="Used in Chrome on iPhone" />
+                <br>
                 <em>Used in Chrome on iPhone</em>
             </div>
         </td>
         <td>
             <div align="center">
-                <img src="used-in-safari-iphone.png" alt="Used in Safari on iPhone" />
+                <img src="used-in-safari-iphone.gif" alt="Used in Safari on iPhone" />
+                <br>
                 <em>Used in Safari on iPhone</em>
             </div>
         </td>
@@ -50,13 +56,15 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
     <tr>
         <td>
             <div align="center">
-                <img src="used-in-chrome-android.png" alt="Used in Chrome on Android" />
+                <img src="used-in-chrome-android.gif" alt="Used in Chrome on Android" />
+                <br>
                 <em>Used in Chrome on Android</em>
             </div>
         </td>
         <td>
             <div align="center">
-                <img src="used-in-firefox-android.png" alt="Used in Firefox on Android" />
+                <img src="used-in-firefox-android.gif" alt="Used in Firefox on Android" />
+                <br>
                 <em>Used in Firefox on Android</em>
             </div>
         </td>
@@ -135,6 +143,3 @@ that says "Hello World".
 - Mention based on Lucas Menezes's post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
 - Revisit dir structure section
 - Revisit entire README
-- New screenshots
-- codecov and README badges like my Python repos
-    - Make GitHub Action step conditional on token variable being set, skip if not, don't fail

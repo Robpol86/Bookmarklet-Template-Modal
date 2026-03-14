@@ -113,7 +113,7 @@ export default {
         // Also output to bookmarklet.html.
         teeBookmarkletHtml({
             icon: "icons/favicon.png",
-            label: "Bookmarklet-Template-Modal",
+            label: "BT-Modal",
             input: "bookmarklet.js",
             output: "bookmarklet.html",
         }),
