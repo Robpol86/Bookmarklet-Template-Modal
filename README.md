@@ -36,13 +36,13 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
     <tr>
         <td>
             <div align="center">
-                <img src="used-in-chrome-iphone.png" alt="Used in Chrome on iPhone" />
+                <img src="used-in-chrome-iphone.gif" alt="Used in Chrome on iPhone" />
                 <em>Used in Chrome on iPhone</em>
             </div>
         </td>
         <td>
             <div align="center">
-                <img src="used-in-safari-iphone.png" alt="Used in Safari on iPhone" />
+                <img src="used-in-safari-iphone.gif" alt="Used in Safari on iPhone" />
                 <em>Used in Safari on iPhone</em>
             </div>
         </td>
