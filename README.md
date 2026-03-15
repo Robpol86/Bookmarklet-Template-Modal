@@ -3,10 +3,11 @@
 Bookmarklet-Template-Modal is a template git repo that implements a native JavaScript modal in a bookmarklet to display on
 any web page. It is based on Lucas Maués' post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
 
-This repo includes a modal function where you pass your own callback function to fill out the body of the modal dialog. It
-also includes unit tests, linting, multiple modules (source files), and a
-compiler that compiles all modules into a single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
-This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet).
+This repo includes a modal function that accepts your callback function to populate the body of the modal dialog. All of the
+styling is implemented in an [SCSS file](./src/modal.scss) that gets compiled and included in the final bookmarklet. This
+repo also includes unit tests, linting, multiple modules (source files), and a compiler that compiles all modules into a
+single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). It is based on my bare-bones
+[Bookmarklet-Template repo](https://github.com/Robpol86/Bookmarklet-Template).
 
 <table>
     <tr>
