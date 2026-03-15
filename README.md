@@ -1,8 +1,7 @@
 # ![Logo](icons/favicon.png?raw=true "Logo") Bookmarklet-Template-Modal
 
 Bookmarklet-Template-Modal is a template git repo that implements a native JavaScript modal in a bookmarklet to display on
-any web page. It is based on Lucas Menezes's post here:
-https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
+any web page. It is based on Lucas Maués' post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
 
 This repo includes a modal function where you pass your own callback function to fill out the body of the modal dialog. It
 also includes unit tests, linting, multiple modules (source files), and a
