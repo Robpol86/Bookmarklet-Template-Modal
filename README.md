@@ -80,6 +80,10 @@ single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
 
 Some features I've included in this project are:
 
+* Modal styles defined in a separate [SCSS file](./src/modal.scss)
+* Entire modal's logic is isolated in [its own file](./src/modal.mjs) and separate from your own code
+* An abort signal so [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit#signal) and other long-running
+  calls can be automatically aborted when the user closes the modal
 * The project's source files are written in
   [JavaScript module files](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) (*.mjs)
 * The project is "compiled" into an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) `javascript:...` "URL"
