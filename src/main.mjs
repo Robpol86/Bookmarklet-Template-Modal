@@ -7,7 +7,7 @@ import { modal } from "./modal.mjs";
 import { sleep } from "./utils.mjs";
 
 /**
- * Remainder of the main function that runs within one modal.
+ * Remainder of the main function that runs within the modal.
  *
  * Initially show a link. When user clicks the link the modal contents will be replaced with 100 lines of "Hello World x" to
  * test vertical scrolling.
