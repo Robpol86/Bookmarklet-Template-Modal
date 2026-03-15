@@ -1,8 +1,13 @@
 # ![Logo](icons/favicon.png?raw=true "Logo") Bookmarklet-Template-Modal
 
-Bookmarklet-Template-Modal is an example git repo that includes unit tests, linting, multiple modules (source files), and a
-compiler that compiles all modules into a single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE).
-This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/wiki/Bookmarklet).
+Bookmarklet-Template-Modal is a template git repo that implements a native JavaScript modal in a bookmarklet to display on
+any web page. It is based on Lucas Maués' post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
+
+This repo includes a modal function that accepts your callback function to populate the body of the modal dialog. All of the
+styling is implemented in an [SCSS file](./src/modal.scss) that gets compiled and included in the final bookmarklet. This
+repo also includes unit tests, linting, multiple modules (source files), and a compiler that compiles all modules into a
+single JavaScript [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE). It is based on my bare-bones
+[Bookmarklet-Template repo](https://github.com/Robpol86/Bookmarklet-Template).
 
 <table>
     <tr>
@@ -75,6 +80,10 @@ This is how I structure all my one-off [bookmarklets](https://en.wikipedia.org/w
 
 Some features I've included in this project are:
 
+* Modal styles defined in a separate [SCSS file](./src/modal.scss)
+* Entire modal's logic is isolated in [its own file](./src/modal.mjs) and separate from your own code
+* An abort signal so [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit#signal) and other long-running
+  calls can be automatically aborted when the user closes the modal
 * The project's source files are written in
   [JavaScript module files](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) (*.mjs)
 * The project is "compiled" into an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) `javascript:...` "URL"
@@ -142,10 +151,8 @@ There are three ways to install the bookmarklet:
 
 ## Usage
 
-Go to any website and click on the bookmarklet in the bookmarks bar (or wherever you've placed it). You should get an alert
-that says "Hello World".
+Go to any website and click on the bookmarklet in the bookmarks bar (or wherever you've placed it). You should see the modal
+appear with the background turning orange.
 
-## TODO
-
-- Mention based on Lucas Menezes's post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
-- Revisit entire README
+In Chrome on Android you'll need to run the bookmarklet by typing its name in the address bar:
+https://paul.kinlan.me/use-bookmarklets-on-chrome-on-android/
