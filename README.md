@@ -93,7 +93,7 @@ Some features I've included in this project are:
 │  ├─ main.mjs        # Main file to place your code in
 │  ├─ utils.mjs       # Put miscellaneous code here
 │  ├─ log.mjs         # Console logging functions
-│  ├─ modal.mjs       # Modal functions
+│  ├─ modal.mjs       # Modal implementation
 │  ├─ modal.scss      # Modal styling
 │  └─ entrypoint.mjs  # Tells Terser what to include in the output bookmarklet
 │
