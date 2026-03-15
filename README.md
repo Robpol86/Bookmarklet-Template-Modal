@@ -91,14 +91,21 @@ Some features I've included in this project are:
 ```gap
 ├─ src/               # All bookmarklet code goes in this directory
 │  ├─ main.mjs        # Main file to place your code in
-│  ├─ log.mjs         # Example of how to split complex code into multiple files
+│  ├─ utils.mjs       # Put miscellaneous code here
+│  ├─ log.mjs         # Console logging functions
+│  ├─ modal.mjs       # Modal implementation
+│  ├─ modal.scss      # Modal styling
 │  └─ entrypoint.mjs  # Tells Terser what to include in the output bookmarklet
 │
 ├─ icons/
 │  └─ favicon.png
 │
-├─ tests/          # Tests are grouped by the file being tested
-│  └─ log.test.js
+├─ tests/             # Tests are grouped by the file being tested
+│  ├─ __mocks__/
+│  │  └─ scss.mjs     # Mock styles; needed for tests to run
+│  ├─ utils.test.mjs  # Tests for functions in utils.mjs
+│  ├─ log.test.js     # Tests for functions in log.mjs
+│  └─ modal.test.mjs  # Tests for functions in modal.mjs
 │
 ├─ .github/
 │  └─ workflows/
@@ -141,5 +148,4 @@ that says "Hello World".
 ## TODO
 
 - Mention based on Lucas Menezes's post: https://dev.to/lucasm/amazing-native-modal-with-just-html-meet-element-4jpl
-- Revisit dir structure section
 - Revisit entire README
