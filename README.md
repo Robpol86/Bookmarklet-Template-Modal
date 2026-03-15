@@ -90,22 +90,22 @@ Some features I've included in this project are:
 
 ```gap
 ├─ src/               # All bookmarklet code goes in this directory
-│  ├─ modal.mjs       # TODO
-│  ├─ modal.scss      # TODO
-│  ├─ utils.mjs       # TODO
 │  ├─ main.mjs        # Main file to place your code in
-│  ├─ log.mjs         # Example of how to split complex code into multiple files
+│  ├─ utils.mjs       # Put miscellaneous code here
+│  ├─ log.mjs         # Console logging functions
+│  ├─ modal.mjs       # Modal functions
+│  ├─ modal.scss      # Modal styling
 │  └─ entrypoint.mjs  # Tells Terser what to include in the output bookmarklet
 │
 ├─ icons/
 │  └─ favicon.png
 │
-├─ tests/               # Tests are grouped by the file being tested
+├─ tests/             # Tests are grouped by the file being tested
 │  ├─ __mocks__/
-│  │  └─ scss.mjs
-│  ├─ modal.test.mjs
-│  ├─ utils.test.mjs
-│  └─ log.test.js
+│  │  └─ scss.mjs     # Mock styles; needed for tests to run
+│  ├─ utils.test.mjs  # Tests for functions in utils.mjs
+│  ├─ log.test.js     # Tests for functions in log.mjs
+│  └─ modal.test.mjs  # Tests for functions in modal.mjs
 │
 ├─ .github/
 │  └─ workflows/
