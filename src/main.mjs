@@ -13,11 +13,14 @@ import { sleep } from "./utils.mjs";
  * test vertical scrolling.
  *
  * @param {HTMLDivElement} dialog - The dialog's main body div.
+ * @param {AbortSignal} signal - Signals that the request should be aborted.
+ * @param {string} initialMessage - The initial message to display.
  */
-async function inModal(dialog) {
+async function inModal(dialog, signal, initialMessage) {
+    if (signal?.aborted) return; // Not necessary, leaving here as an example; needed if you call fetch()
     logInfo(__FNAME_LINENO__, "Showing initial message");
     const message = document.createElement("a");
-    message.textContent = "Click here to expand.";
+    message.textContent = initialMessage;
     message.href = "#";
     message.addEventListener("click", (event) => {
         event.preventDefault();
@@ -44,7 +47,7 @@ export async function main() {
 
     try {
         // Continue in modal.
-        await modal(inModal);
+        await modal(inModal, "Click here to expand.");
     } finally {
         window.__BOOKMARKLET_MODAL_RUNNING__ = false;
     }
