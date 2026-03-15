@@ -151,5 +151,8 @@ There are three ways to install the bookmarklet:
 
 ## Usage
 
-Go to any website and click on the bookmarklet in the bookmarks bar (or wherever you've placed it). You should get an alert
-that says "Hello World".
+Go to any website and click on the bookmarklet in the bookmarks bar (or wherever you've placed it). You should see the modal
+appear with the background turning orange.
+
+In Chrome on Android you'll need to run the bookmarklet by typing its name in the address bar:
+https://paul.kinlan.me/use-bookmarklets-on-chrome-on-android/
