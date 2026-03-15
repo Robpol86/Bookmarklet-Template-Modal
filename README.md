@@ -90,6 +90,9 @@ Some features I've included in this project are:
 
 ```gap
 ├─ src/               # All bookmarklet code goes in this directory
+│  ├─ modal.mjs       # TODO
+│  ├─ modal.scss      # TODO
+│  ├─ utils.mjs       # TODO
 │  ├─ main.mjs        # Main file to place your code in
 │  ├─ log.mjs         # Example of how to split complex code into multiple files
 │  └─ entrypoint.mjs  # Tells Terser what to include in the output bookmarklet
@@ -97,7 +100,11 @@ Some features I've included in this project are:
 ├─ icons/
 │  └─ favicon.png
 │
-├─ tests/          # Tests are grouped by the file being tested
+├─ tests/               # Tests are grouped by the file being tested
+│  ├─ __mocks__/
+│  │  └─ scss.mjs
+│  ├─ modal.test.mjs
+│  ├─ utils.test.mjs
 │  └─ log.test.js
 │
 ├─ .github/
