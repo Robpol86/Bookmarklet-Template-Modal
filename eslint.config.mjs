@@ -63,6 +63,9 @@ export default defineConfig([
     eslintPluginPackageJson.configs.recommended,
     {
         rules: {
+            "package-json/require-exports": "off",
+            "package-json/require-files": "off",
+            "package-json/require-sideEffects": "off",
             "package-json/require-version": "off",
             "package-json/valid-package-definition": "off",
         },
