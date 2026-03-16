@@ -139,7 +139,7 @@ There are three ways to install the bookmarklet:
 1. Import the
    [dist/bookmarklet.html](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.html)
    file using the browser's bookmarks manager (in Chrome and Edge the bookmarklet will have its own favicon)
-2. Manually crearte a new bookmark with the contents of
+2. Manually create a new bookmark with the contents of
    [dist/bookmarklet.js](https://github.com/Robpol86/Bookmarklet-Template-Modal/releases/latest/download/bookmarklet.js) as
    the URL
 3. On a webpage make the bookmarklet an `<a href="...">Bookmarklet</a>` link so the user can drag and drop it into their bookmarks
