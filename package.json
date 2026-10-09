@@ -39,5 +39,10 @@
         "jest": "^30.3.0",
         "jest-environment-jsdom": "^30.3.0",
         "prettier": "^3.8.1"
+    },
+    "allowScripts": {
+        "unrs-resolver": false,
+        "@parcel/watcher": false,
+        "fsevents": false
     }
 }
